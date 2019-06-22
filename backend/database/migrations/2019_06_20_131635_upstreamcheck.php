@@ -7,16 +7,16 @@ use Illuminate\Database\Migrations\Migration;
 class Upstreamcheck extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations.s
      *
      * @return void
      */
     public function up()
     {
         //
-        Schema::create('upstreamcheck', function($table)
-        {
+        Schema::create('upstreamcheck' , function(Blueprint $table) {
             $table->increments('id');
+            $table->string('message');
         });
     }
 
@@ -27,6 +27,8 @@ class Upstreamcheck extends Migration
      */
     public function down()
     {
+        //
+        
         Schema::dropIfExists('upstreamcheck');
     }
 }

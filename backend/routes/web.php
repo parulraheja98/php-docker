@@ -1,4 +1,5 @@
 <?php
+use App\upstreamcheck;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,10 @@ $router->get('/api/start', function () {
     ];
 });
 
-$router->get('/api/players','PlayersController@listOfPlayers');
+$router->get('/api/players' , 'PlayerController@listAllPlayers');
+
+$router->get('api/players/{id}' , 'PlayerController@playerById');
+
+$router->get('/api/players/del/{id}' , 'PlayerController@delPlayerById');
+
+$router->post('/api/players/add','PlayerController@addPlayer');
