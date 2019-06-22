@@ -2,8 +2,15 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.webp" />
     <up-start />
-    this is a test
-   
+    
+    <b-list-group v-if="profileExists===true">
+    <b-list-group-item variant="info">Player Information :- </b-list-group-item>
+    <b-list-group-item>Name :- {{name}}</b-list-group-item>
+    <b-list-group-item>Height :- {{height}}</b-list-group-item>
+    <b-list-group-item>Weight :- {{weight}}</b-list-group-item>
+    <b-list-group-item>Country :- {{country}}</b-list-group-item>
+  </b-list-group>
+
    
   </div>
 </template>
@@ -19,7 +26,11 @@ export default {
   data() {
     return {
       serverMessage: null,
-      playerProfile:[]
+      profileExists:false,
+      name:'',
+      height:'',
+      country:'',
+      weight:''
     };
   },
   async created() {
@@ -29,8 +40,16 @@ export default {
     console.log('checking response 1');
     console.log(dataResp);
     console.log('checking response 2');
-    console.log(dataResp.data[0]);
-    this.playerProfile = dataResp.data[0];
+    console.log(dataResp.data);
+    if(dataResp.data.length != 0) {
+    const playerProfile = dataResp.data;
+    this.height = playerProfile.height;
+    this.weight = playerProfile.weight;
+    this.country = playerProfile.country;
+    this.name = playerProfile.name;
+    this.profileExists = true;
+    }
+    
     
 
   },

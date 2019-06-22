@@ -9,10 +9,11 @@
             <b-list-group-item variant="info">Player Information :- </b-list-group-item>
             <b-list-group-item>Name :- {{player.name}}</b-list-group-item>
             <b-list-group-item>  <a :href="'/profile/' + player.id">Click here to view the Profile </a> </b-list-group-item>
+            <b-list-group-item>  <a :href="'/profile/del/' + player.id">Delete this profile </a> </b-list-group-item> 
           </b-list-group>
          
 
-          </div>
+    </div>
   </div>
 </template>
 

@@ -15,6 +15,12 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/Home.vue")
     },
     {
+      path: "/profile/del/:id",
+      name: "deleteprofile",
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/DeleteProfile.vue")
+    },
+    {
       path: "/about/:testing",
       name: "about",
       // route level code-splitting
