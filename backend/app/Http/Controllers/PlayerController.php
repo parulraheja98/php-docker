@@ -9,13 +9,6 @@ class PlayerController extends Controller
 
 {
 
-    public function testcheck() {
-
-        $message = upstreamcheck::all();
-       return $message[0]->name;
-
-    }
-
     public function listAllPlayers() {
         $messages = player::all();
         return $messages;
@@ -47,12 +40,6 @@ class PlayerController extends Controller
 
 
     }
-
-
-
-
-
-
 
 
 
