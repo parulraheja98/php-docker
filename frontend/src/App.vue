@@ -1,8 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="navigation-bar">
+       <b-navbar toggleable="sm" type="dark" variant="info">
+    <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
+
+    <b-navbar-brand href="/"><img src="./assets/logo.webp" height="80px" /></b-navbar-brand>
+     <b-navbar-nav class="ml-auto">
+     
+      <b-navbar-brand href="/">Home</b-navbar-brand>
+      <b-navbar-brand href="/createplayer">Create Player</b-navbar-brand>
+     </b-navbar-nav>
+   
+  </b-navbar>
     </div>
     <router-view />
   </div>
@@ -13,7 +22,6 @@
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 #nav {

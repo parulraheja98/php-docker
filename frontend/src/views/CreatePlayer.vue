@@ -1,16 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.webp" />
+    
     <up-start />
    
      <div v-if="userCreated===false">
-        <form @submit=createNewPlayer method="post">
-              Name :-    <input type='text' name='name' v-model='name' /> 
-              Height :- <input type='text' name='height' v-model='height' />
-              Weight :-  <input type='text' name='weight' v-model='weight' />
-              Country :- <input type='text' name='country' v-model='country' />
-              <button type="submit"> Submit </button>
-        </form>
+        <b-form @submit=createNewPlayer method="post">
+          <b-form-group id="input-group-1" label="Name" label-for="input-1">
+            <b-form-input type="text" name="name" v-model="name" required placeholder="Enter name"></b-form-input>
+          </b-form-group>
+          <b-form-group id="input-group-2" label="Height" label-for="input-2">
+              <b-form-input type="text" name="height" v-model="height" required placeholder="Enter height"></b-form-input>
+          </b-form-group>   
+          <b-form-group id="input-group-3" label="Weight" label-for="input-1">
+              <b-form-input type="text" name="weight" v-model="weight" required placeholder="Enter weight"/></b-form-input>
+           </b-form-group>
+           <b-form-group id="input-group-4" label="Country" label-for="input-1">   
+              <b-form-input type="text" name="country" v-model="country" required placeholder="Enter country"></b-form-input>
+           </b-form-group>   
+              <b-button type="submit"> Submit </b-button>
+        </b-form>
    </div>
     <div v-else="userCreated===true">
       <b-alert show variant="success"> {{message}} </b-alert>

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.webp" />
+    
     <up-start />
     
     <b-list-group v-if="profileExists===true">

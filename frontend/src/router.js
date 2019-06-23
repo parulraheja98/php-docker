@@ -21,15 +21,6 @@ export default new Router({
         import(/* webpackChunkName: "about" */ "./views/DeleteProfile.vue")
     },
     {
-      path: "/about/:testing",
-      name: "about",
-      // route level code-splitting
-      // this generates a s/eparate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ "./views/About.vue")
-    },
-    {
       path: "/profile/:id",
       name: "profile",
       // route level code-splitting

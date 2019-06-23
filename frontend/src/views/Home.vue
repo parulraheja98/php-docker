@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.webp" />
+    
     <up-start />
-    this is a test
+    
     <div v-for="player in players">
            
            <b-list-group>
